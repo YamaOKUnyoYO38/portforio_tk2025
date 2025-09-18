@@ -1,0 +1,469 @@
+@charset "utf-8";
+
+/* ========================================
+    リセットcss
+========================================= */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+html {
+  overflow-y: scroll;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th {
+  text-align: left;
+}
+a:focus {
+  outline: none;
+}
+
+/* ========================================
+	フロートの解除
+========================================= */
+
+.clearfix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* ========================================
+	全体設計
+========================================= */
+
+body {
+  background-color: rgba(250, 250, 250, 0.3);
+  background: url(./images/seamless-texture-natural-wood.png) center 0;
+  background-attachment: fixed;
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+}
+
+a {
+  font-family: 'メイリオ', Meiryo;
+}
+
+/* ========================================
+	ヘッダー
+========================================= */
+header {
+  width: 100%;
+  height: 120px;
+  position: fixed;
+  top: 0;
+  background-color: aqua;
+  background: url(./images/header_back.jpg) no-repeat center 0;
+}
+
+header h1 {
+  text-align: center;
+  line-height: 120px;
+  font-size: 34px;
+  font-weight: bold;
+  color: #474747;
+}
+
+nav#top_nav {
+  /* position: fixed; */
+  /* align-items: center;
+  display: block; */
+  background-color: rgba(256, 256, 256, 0.7);
+  margin: 0 230px 0 230px;
+}
+
+nav#top_nav ul {
+  width: 1756px;
+  width: fit-content;
+  height: 125px;
+  margin: auto;
+  line-height: 125px;
+  /* margin-right: 50px; */
+}
+
+nav#top_nav ul li {
+  float: left;
+  margin-right: 95px;
+  /* border-right: 3px solid #474747; */
+  padding-right: 64px;
+  /* margin: auto; */
+  /* width: fit-content; */
+}
+
+nav#top_nav ul li:last-child {
+  margin-right: 0;
+  border: none;
+}
+
+nav#top_nav ul li a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bolder;
+  color: #474747;
+}
+
+/* ========================================
+	wrapper
+========================================= */
+/*スマホ用*/
+@media screen and (max-width:768px) {
+  div#wrapper{
+    display: flex;
+    flex-direction: row;
+  }
+}
+/*PC用*/
+@media screen and (min-width:1024px) {
+  div#wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+div#wrapper {
+  width: 1500px;
+  margin: 365px auto 0 auto;
+  font-weight: 400;
+}
+
+/* ========================================
+	サイト説明
+========================================= */
+div#top_explain {
+  height: 500px;
+  margin-bottom: 50px;
+}
+
+div#mainimage {
+  width: 570px;
+  height: 500px;
+  background-color: antiquewhite;
+  border-radius: 6px 0 0 6px;
+  float: left;
+  /* background: url() center center; */
+}
+
+div#mainimage img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover; /* width, heightといっしょに使います */
+  border-radius: 6px 0 0 6px;
+  /* border: 1px solid #111; */
+}
+
+div#sitedescription {
+  width: 930px;
+  height: 500px;
+  background-color: rgba(256, 256, 256, 0.8);
+  float: right;
+  border-radius: 0 6px 6px 0;
+  /* padding: 5px; */
+  /* float: left; */
+}
+
+div#sitedescription h1 {
+  font-size: 38px;
+  color: #474747;
+  border-bottom: 5px solid #474747;
+}
+
+div#sitedescription dl dt {
+  padding-left: 20px;
+  font-size: 40px;
+  /* float:left; */
+}
+div#sitedescription dl dt a {
+  color: #6935f7;
+  text-decoration: none;
+}
+div#sitedescription dl dd {
+  font-size: 20px;
+  margin-left: 80px;
+}
+
+/* ========================================
+	Works
+========================================= */
+
+div#works {
+  width: 1500px;
+  height: 829px;
+  /* background-color: blue; */
+  justify-content: center;
+}
+
+h1#works_title {
+  font-size: 60px;
+  color: #474747;
+  text-align: center;
+  line-height: 149px;
+}
+
+div#works_inner {
+  width: 1500px;
+  /* float: left; */
+  padding-top: 30px;
+}
+
+ul#workrow {
+  width: 1500px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 73px;
+  /* justify-content: space-between; */
+  /* display: inline-block; */
+}
+
+div#works_inner ul li {
+  /* float: left; */
+  /* margin-right: 30px; */
+  margin-bottom: 30px;
+  margin-left: 30px;
+}
+
+@media screen and (min-width: 1500px) {
+  .work:nth-child(3n + 1) {
+    margin-left: -30px;
+  }
+}
+
+.work:nth-child(3n + 1) {
+  margin-left: 0;
+}
+
+.work {
+  width: 420px;
+  height: 240px;
+  background-color: rgba(46, 46, 46, 0.4);
+}
+
+.btn_view {
+  width: 950px;
+  height: auto;
+}
+
+.btn_view h1 {
+  font-size: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  margin: auto 0 auto 570px;
+  background-color: #319b1d;
+}
+
+/* ========================================
+	Blog
+========================================= */
+div#blog {
+  height: 712px;
+  /* background-color: blueviolet; */
+}
+
+div#blog h1#blog_title {
+  font-size: 60px;
+  text-align: center;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+}
+
+div#blog_comment {
+  width: 490px;
+  height: 600px;
+  background-color: rgba(200, 250, 210, 1);
+  float: left;
+}
+
+div#blog_comment h2 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+}
+
+div#blog_contents {
+  width:950px;
+  height: 540px;
+  background-color: rgb(255, 255, 255);
+  float: left;
+  border: 30px solid rgba(146, 132, 132, 0.8);
+  overflow: auto;
+  /* Enables scrolling when content overflows */
+  /* Hide scrollbar for WebKit-based browsers (Chrome, Safari, Edge, Opera) */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+div#blog_contents dl {
+  margin: 30px;
+  
+}
+
+div#blog_contents dl a {
+  text-decoration: none;
+}
+
+div#blog_contents dl dt a {
+  margin-bottom: 5px;
+  display: inline-block;
+  
+}
+
+div#blog_contents dl dt {
+  display: block;
+  border-top: 1px dotted #474747;
+}
+
+div#blog_contents dl dd {
+  margin-bottom: 5px;
+}
+
+
+
+/* div#blog_main {
+  /* width: 950px;
+  height: 540px; */
+  /* background-color: aliceblue;
+  float: left; */
+/* }  */
+
+
+/* ========================================
+	Skill Level
+========================================= */
+div#skill_level {
+  height: 1099px;
+  background-color: yellowgreen;
+}
+/* ========================================
+	footer
+========================================= */
+footer {
+  height: 120px;
+  background-color: violet;
+}
+}
