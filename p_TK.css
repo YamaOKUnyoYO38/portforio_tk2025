@@ -520,17 +520,38 @@ footer {
 }
 
 footer h2 {
+  font-weight: 900;
   color: #474747;
   position: absolute;
   margin: 0 auto 0 auto;
   right: 20px;
-  bottom: 20px;
+  bottom: 10px;
 }
 
 .ftr_x {
-  background: url(./twitter-x.svg) no-repeat center center;
-  width: 58px;
-  height: 58px;
+  background: url(./twitter-x.png) no-repeat center center;
+  width: 67px;
+  height: 67px;
+  position: absolute;
+  bottom: 40px;
+  right: 214px;
+  color: white;
+  margin: 0;
+}
+.ftr_i {
+  background: url(./instagram.png) no-repeat center center;
+  width: 67px;
+  height: 67px;
+  position: absolute;
+  bottom: 40px;
+  right: 127px;
+  color: white;
+  margin: 0;
+}
+.ftr_f {
+  background: url(./facebook.png) no-repeat center center;
+  width: 67px;
+  height: 67px;
   position: absolute;
   bottom: 40px;
   right: 40px;
@@ -538,12 +559,12 @@ footer h2 {
   margin: 0;
 }
 
-.bi::before {
+/* .bi::before {
   display: inline-block;
   content: "";
   vertical-align: -.125em;
   background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z' clip-rule='evenodd'/></svg>");
   background-repeat: no-repeat;
-  background-size: 1rem 1rem;
-}
+  background-size: 100px 100px;
+} */
 }
