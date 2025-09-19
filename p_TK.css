@@ -232,14 +232,16 @@ nav#top_nav ul li a {
 ========================================= */
 /*スマホ用*/
 @media screen and (max-width:768px) {
-  div#wrapper{
+  div#wrapper,
+  header{
     display: flex;
     flex-direction: row;
   }
 }
 /*PC用*/
 @media screen and (min-width:1024px) {
-  div#wrapper{
+  div#wrapper,
+  header{
     display: flex;
     flex-direction: column;
   }
@@ -268,7 +270,7 @@ div#mainimage {
 
 div#mainimage img {
   width: 100%;
-  height: 500px;
+  height: 567px;
   object-fit: cover; /* width, heightといっしょに使います */
   border-radius: 6px 0 0 6px;
   /* border: 1px solid #111; */
@@ -276,7 +278,7 @@ div#mainimage img {
 
 div#sitedescription {
   width: 930px;
-  height: 500px;
+  height: 567px;
   background-color: rgba(256, 256, 256, 0.8);
   float: right;
   border-radius: 0 6px 6px 0;
@@ -288,6 +290,8 @@ div#sitedescription h1 {
   font-size: 38px;
   color: #474747;
   border-bottom: 5px solid #474747;
+  margin-top: 20px;
+  text-align: center;
 }
 
 div#sitedescription dl dt {
@@ -311,8 +315,8 @@ div#sitedescription dl dd {
 div#works {
   width: 1500px;
   height: 829px;
-  /* background-color: blue; */
   justify-content: center;
+  /* background-color: blue; */
 }
 
 h1#works_title {
@@ -320,6 +324,7 @@ h1#works_title {
   color: #474747;
   text-align: center;
   line-height: 149px;
+  margin-top: 80px;
 }
 
 div#works_inner {
@@ -386,10 +391,10 @@ div#blog h1#blog_title {
   font-size: 60px;
   text-align: center;
   letter-spacing: 4px;
-  margin-bottom: 30px;
+  margin-bottom: 34px;
 }
 
-div#blog_comment {
+/* div#blog_comment {
   width: 490px;
   height: 600px;
   background-color: rgba(200, 250, 210, 1);
@@ -401,11 +406,11 @@ div#blog_comment h2 {
   font-weight: bold;
   text-align: center;
   margin-top: 30px;
-}
+} */
 
 div#blog_contents {
-  width:950px;
-  height: 540px;
+  width:1440px;
+  height: 530px;
   background-color: rgb(255, 255, 255);
   float: left;
   border: 30px solid rgba(146, 132, 132, 0.8);
@@ -428,9 +433,9 @@ div#blog_contents dl a {
 }
 
 div#blog_contents dl dt a {
-  margin-bottom: 5px;
   display: inline-block;
-  
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 div#blog_contents dl dt {
@@ -457,13 +462,88 @@ div#blog_contents dl dd {
 ========================================= */
 div#skill_level {
   height: 1099px;
-  background-color: yellowgreen;
+  width: 1500px;
+  padding-top: 30px;
+  margin-top: 80px;
+  /* background-color: yellowgreen; */
+  /* float: left; */
 }
+
+div#skill_level h1 {
+  font-size: 60px;
+  text-align: center;
+  letter-spacing: 4px;
+  margin-bottom: 34px;
+}
+
+ul#skill_row {
+  width: 1500px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 73px;
+  /* justify-content: space-between; */
+  /* display: inline-block; */
+}
+
+div#skill_column ul li {
+  /* float: left; */
+  /* margin-right: 30px; */
+  margin-bottom: 30px;
+  margin-left: 30px;
+}
+
+
+
+.work:nth-child(3n + 1) {
+  margin-left: 0;
+}
+
+.skill {
+  width: 420px;
+  height: 240px;
+  background-color: rgba(46, 46, 46, 0.4);
+}
+
+@media screen and (min-width: 1500px) {
+  .skill:nth-child(3n + 1) {
+    margin-left: -30px;
+  }
+}
+
 /* ========================================
 	footer
 ========================================= */
 footer {
   height: 120px;
-  background-color: violet;
+  background-color: #000cff;
+  position: relative;
+}
+
+footer h2 {
+  color: white;
+  position: absolute;
+  margin: 0 auto 0 auto;
+  right: 20px;
+  bottom: 20px;
+}
+
+.ftr_logo {
+
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  color: white;
+  margin: 0;
+}
+
+.bi::before {
+  display: inline-block;
+  content: "";
+  vertical-align: -.125em;
+  background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z' clip-rule='evenodd'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
 }
 }
