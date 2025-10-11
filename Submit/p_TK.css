@@ -1,0 +1,837 @@
+@charset "utf-8";
+
+/* ========================================
+    リセットcss
+========================================= */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+html {
+  overflow-y: scroll;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th {
+  text-align: left;
+}
+a:focus {
+  outline: none;
+}
+
+/* ========================================
+	フロートの解除
+========================================= */
+
+.clearfix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* ========================================
+	全体設計
+========================================= */
+
+body {
+  background-color: rgba(250, 250, 250, 0.3);
+  background: url(./images/seamless-texture-natural-wood.png) center 0;
+  background-attachment: fixed;
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+}
+
+a {
+  font-family: 'メイリオ', Meiryo;
+}
+
+a.anchor {
+  display: block;
+  padding-top: 170px;
+  margin-top: -170px;
+}
+
+/* ========================================
+	ヘッダー
+========================================= */
+header {
+  width: 100%;
+  height: 120px;
+  position: fixed;
+  top: 0;
+  background-color: aqua;
+  background: url(./images/header_back.jpg) no-repeat center 0;
+}
+
+header h1 {
+  text-align: center;
+  line-height: 120px;
+  font-size: 34px;
+  font-weight: bold;
+  color: #474747;
+}
+
+nav#top_nav {
+  /* position: fixed; */
+  /* align-items: center;
+  display: block; */
+  background-color: rgba(256, 256, 256, 0.7);
+  margin: 0 230px 0 230px;
+}
+
+nav#top_nav ul {
+  width: 1756px;
+  width: fit-content;
+  height: 125px;
+  margin: auto;
+  line-height: 125px;
+  /* margin-right: 50px; */
+}
+
+nav#top_nav ul li {
+  float: left;
+  margin-right: 95px;
+  /* border-right: 3px solid #474747; */
+  padding-right: 64px;
+  /* margin: auto; */
+  /* width: fit-content; */
+}
+
+nav#top_nav ul li:last-child {
+  margin-right: 0;
+  border: none;
+}
+
+nav#top_nav ul li a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bolder;
+  color: #474747;
+}
+
+/* ========================================
+	wrapper
+========================================= */
+/*スマホ用*/
+@media screen and (max-width: 768px) {
+  div#wrapper,
+  header {
+    display: flex;
+    flex-direction: row;
+  }
+}
+/*PC用*/
+@media screen and (min-width: 1024px) {
+  div#wrapper,
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+  div#wrapper {
+    width: 1500px;
+    margin: 365px auto 0 auto;
+    font-weight: 400;
+  }
+
+  /* ========================================
+	サイト説明
+========================================= */
+  div#top_explain {
+    height: 500px;
+    margin-bottom: 50px;
+  }
+
+  div#mainimage {
+    width: 570px;
+    height: 500px;
+    background-color: antiquewhite;
+    border-radius: 6px 0 0 6px;
+    float: left;
+    /* background: url() center center; */
+  }
+
+  div#mainimage img {
+    width: 100%;
+    height: 567px;
+    object-fit: cover; /* width, heightといっしょに使います */
+    border-radius: 6px 0 0 6px;
+    /* border: 1px solid #111; */
+  }
+
+  div#sitedescription {
+    width: 930px;
+    height: 567px;
+    background-color: rgba(256, 256, 256, 0.8);
+    float: right;
+    border-radius: 0 6px 6px 0;
+    /* padding: 5px; */
+    /* float: left; */
+  }
+
+  div#sitedescription h1 {
+    font-size: 38px;
+    color: #474747;
+    border-bottom: 5px solid #474747;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  div#sitedescription dl dt {
+    padding-left: 20px;
+    font-size: 40px;
+    /* float:left; */
+  }
+  div#sitedescription dl dt a {
+    color: #6935f7;
+    text-decoration: none;
+  }
+  div#sitedescription dl dd {
+    font-size: 20px;
+    margin-left: 80px;
+  }
+
+  /* ========================================
+	Works
+========================================= */
+
+  div#works {
+    width: 1500px;
+    height: 829px;
+    justify-content: center;
+    /* background-color: blue; */
+  }
+
+  h1#works_title {
+    font-size: 60px;
+    color: #474747;
+    text-align: center;
+    line-height: 149px;
+    margin-top: 80px;
+  }
+
+  div#works_inner {
+    width: 1500px;
+    /* float: left; */
+    padding-top: 30px;
+  }
+
+  ul#workrow {
+    width: 1500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 73px;
+    /* justify-content: space-between; */
+    /* display: inline-block; */
+  }
+
+  div#works_inner ul li {
+    /* float: left; */
+    /* margin-right: 30px; */
+    margin-bottom: 30px;
+    margin-left: 30px;
+  }
+
+  @media screen and (min-width: 1500px) {
+    .work:nth-child(3n + 1) {
+      margin-left: -30px;
+    }
+  }
+
+  .work:nth-child(3n + 1) {
+    margin-left: 0;
+  }
+
+  .work {
+    width: 420px;
+    height: 240px;
+    background-color: rgba(46, 46, 46, 0.4);
+  }
+
+  .btn_view {
+    width: 950px;
+    height: auto;
+  }
+
+  .btn_view h1 {
+    font-size: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    margin: auto 0 auto 570px;
+    background-color: #319b1d;
+  }
+
+  /* ========================================
+	Blog
+========================================= */
+  div#blog {
+    height: 712px;
+    /* background-color: blueviolet; */
+  }
+
+  div#blog h1#blog_title {
+    font-size: 60px;
+    text-align: center;
+    letter-spacing: 4px;
+    margin-bottom: 34px;
+  }
+
+  /* div#blog_comment {
+  width: 490px;
+  height: 600px;
+  background-color: rgba(200, 250, 210, 1);
+  float: left;
+}
+
+div#blog_comment h2 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+} */
+
+  div#blog_contents {
+    width: 1440px;
+    height: 530px;
+    background-color: rgb(255, 255, 255);
+    float: left;
+    border: 30px solid rgba(146, 132, 132, 0.8);
+    overflow: auto;
+    /* Enables scrolling when content overflows */
+    /* Hide scrollbar for WebKit-based browsers (Chrome, Safari, Edge, Opera) */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  div#blog_contents dl {
+    margin: 30px;
+  }
+
+  div#blog_contents dl a {
+    text-decoration: none;
+  }
+
+  div#blog_contents dl dt a {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  div#blog_contents dl dt {
+    display: block;
+    border-top: 1px dotted #474747;
+  }
+
+  div#blog_contents dl dd {
+    margin-bottom: 5px;
+  }
+
+  /* div#blog_main {
+  /* width: 950px;
+  height: 540px; */
+  /* background-color: aliceblue;
+  float: left; */
+  /* }  */
+
+  /* ========================================
+	Skill Level
+========================================= */
+  div#skill_level {
+    height: 1099px;
+    width: 1500px;
+    padding-top: 30px;
+    margin-top: 80px;
+    /* background-color: yellowgreen; */
+    /* float: left; */
+  }
+
+  div#skill_level h1 {
+    font-size: 60px;
+    text-align: center;
+    letter-spacing: 4px;
+    margin-bottom: 34px;
+  }
+
+  ul#skill_row {
+    width: 1500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 73px;
+    /* justify-content: space-between; */
+    /* display: inline-block; */
+  }
+
+  div#skill_column ul li {
+    /* float: left; */
+    /* margin-right: 30px; */
+    margin-bottom: 30px;
+    margin-left: 30px;
+  }
+
+  .work:nth-child(3n + 1) {
+    margin-left: 0;
+  }
+
+  .skill {
+    width: 420px;
+    height: 240px;
+    background-color: rgba(46, 46, 46, 0.4);
+  }
+
+  @media screen and (min-width: 1500px) {
+    .skill:nth-child(3n + 1) {
+      margin-left: -30px;
+    }
+  }
+
+  /* ========================================
+	footer
+========================================= */
+  footer {
+    height: 120px;
+    background-color: white;
+    position: relative;
+  }
+
+  footer h1 a {
+    font-size: 40px;
+    color: #474747;
+    text-align: center;
+    line-height: 120px;
+    display: block;
+    text-decoration: none;
+  }
+
+  footer h2 {
+    font-weight: 900;
+    color: #474747;
+    position: absolute;
+    margin: 0 auto 0 auto;
+    right: 20px;
+    bottom: 10px;
+  }
+
+  .ftr_logo {
+    width: 58px;
+    height: 58px;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    color: white;
+    margin: 0;
+  }
+
+  .bi::before {
+    display: inline-block;
+    content: '';
+    vertical-align: -0.125em;
+    background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z' clip-rule='evenodd'/></svg>");
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .ftr_x {
+    background: url(./twitter-x.png) no-repeat center center;
+    width: 67px;
+    height: 67px;
+    position: absolute;
+    bottom: 40px;
+    right: 214px;
+    color: white;
+    margin: 0;
+  }
+  .ftr_i {
+    background: url(./instagram.png) no-repeat center center;
+    width: 67px;
+    height: 67px;
+    position: absolute;
+    bottom: 40px;
+    right: 127px;
+    color: white;
+    margin: 0;
+  }
+  .ftr_f {
+    background: url(./facebook.png) no-repeat center center;
+    width: 67px;
+    height: 67px;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    color: white;
+    margin: 0;
+  }
+
+  /* .bi::before {
+  display: inline-block;
+  content: "";
+  vertical-align: -.125em;
+  background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z' clip-rule='evenodd'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 100px 100px;
+} */
+}
+
+/*==============================
+================================
+
+以下Profileページ用
+
+================================
+================================*/
+
+/* div#profile {
+  border-radius: 6px 6px 6px 6px;
+} */
+
+div#profile h1 {
+  font-size: 60px;
+  color: #474747;
+  text-align: center;
+  line-height: 149px;
+  /* margin-top: 20px; */
+}
+
+div#profile img {
+  width: 500px;
+  height: auto;
+  float: left;
+  border-radius: 6px 0 0 6px;
+}
+
+div#p_contents {
+  width: 500px;
+  height: 620px;
+  padding: 30px auto 0 auto;
+  margin: 0 auto 30px auto;
+  float: left;
+  background-color: aliceblue;
+  border-right: 5px solid #474747;
+  border-left: 5px solid #474747;
+}
+
+div#p_contents h2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+div#p_contents ul#p_row1 {
+  margin: 10px auto 0 30px;
+
+  /* text-align: center; */
+  /* float: left; */
+}
+
+div#p_contents ul#p_row2 {
+  margin: 0 auto 0 30px;
+  /* text-align: center; */
+  /* float: right; */
+}
+
+div#p_contents ul li a {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 45px;
+  text-decoration: none;
+  color: #474747;
+}
+
+div#p_history {
+  width: auto;
+  height: 620px;
+  background-color: aliceblue;
+  border-radius: 0 6px 6px 0;
+}
+
+div#p_history h2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+div#p_history dl {
+  display: inline-block;
+  margin: 10px auto 0 30px;
+}
+
+div#p_history dl dt {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 45px;
+  text-decoration: none;
+  color: #5361e0;
+  margin: 0 30px 0 0;
+  float: left;
+}
+
+div#p_history dl dd {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 45px;
+  text-decoration: none;
+  color: #474747;
+}
+
+/*==============================
+================================
+
+以下Contactページ用
+
+================================
+================================*/
+/* div.contact {
+  width: 750px;
+  height: auto;
+  margin: 0 auto 30px auto;
+} */
+
+/* div.contact form {
+  width: auto;
+  height: auto;
+  background-color: rgb(243, 245, 247);
+  display: flex;
+  justify-content: center; /* 水平中央揃え */
+  /* align-items: center;    垂直中央揃え */
+  /* height: 100vh; 親要素の高さをビューポートの100%にする（例） */
+  /* padding: 30px auto 30px auto; */
+/* } */ */
+
+/* div.contact form div#c_fcont {
+  margin: 30px auto 30px auto;
+}
+
+div#c_fcont table tr {
+  margin: 0 auto 20px auto;
+  display: inline;
+}
+
+.c_smallt {
+  float: left;
+  font-size: 40px;
+} */
+
+div.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* ビューポート中央に配置 */
+  background-color: #fff; /* 背景白 */
+  margin-bottom: 30px;
+}
+
+div.contact h1#c_title {
+  font-size: 60px;
+  text-align: center;
+  letter-spacing: 4px;
+  margin-bottom: 34px;
+}
+
+div.contact form {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  /* flex-direction: column; */
+  gap: 30px;
+  max-width: 550px; /* 好きな幅に調整 */
+  width: 100%;
+  margin: 0 auto;   /* 中央寄せ */
+}
+
+div.contact .form_row {
+  display: flex;
+  align-items: center;
+  display: inline-block;
+  /* gap: 20px; */
+}
+
+div.contact .form_row {
+  margin-top: 10px;
+  font-size: 24px;
+  min-width: 0px;
+  min-height: 100px;
+}
+
+div.contact .form_row {
+  flex: 1;
+  padding: 8px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+div.contact .form_row1
+{
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 800px; /* 好きな幅に調整 */
+  width: 100%;
+  margin: 10px 0;   /* 中央寄せ */
+  /* border-radius: 10px; */
+}
+
+div.contact .form_row, td#c_textarea {
+  flex: 1;
+  min-height: 20px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.c_type {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+/*input[type="text"] … その中の テキスト入力フィールド
+（input要素でtype="text"のもの） にスタイルを適用*/
+
+/*Flexbox の伸縮指定
+「空いているスペースを均等に使う」という意味
+flex: 1; にすると、兄弟要素（この場合は label）との残り幅に応じて、
+テキスト入力欄が横に広がる*/
+
+input#btn_submit {
+  width: 140px;
+  height: 50px;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+textarea#c_textarea {
+  width: 520px;
+  height: 100px;
+}
+
+.contact_wrapper {
+  margin-bottom: 30px;
+}
