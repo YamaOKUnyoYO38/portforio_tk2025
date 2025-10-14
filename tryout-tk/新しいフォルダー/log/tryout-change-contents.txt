@@ -1,0 +1,7 @@
+tryout-change-contents
+
+2025/10/14
+
+tryout-git7-tk
+
+Qiitaやchatgptを用いて、前提知識にある用語の意味を調べては自分の言葉でまとめていく作業を行った。
