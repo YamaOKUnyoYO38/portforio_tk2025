@@ -1,0 +1,54 @@
+tryout-git8-tk
+
+
+============================================
+8.前提知識
+
+-clone
+➤git clone git@(アドレス名)
+　githubのリポジトリを複製する
+
+-branch
+➤git branch (ブランチ名)
+　ブランチを作成
+  -d　ブランチの削除
+
+-checkout
+➤git checkout -b (ブランチ名)
+  新しくブランチを作り、それをカレントブランチにする
+
+-log
+➤git log
+  リポジトリにコミットした履歴を見る
+
+-status
+➤git status
+  現在の状態を表示
+
+-add
+➤ファイルをワークツリーからステージングエリア移動すること
+
+-commit
+➤git commit -m "変更点等"
+　ファイルをステージングエリアからリポジトリに移動すること
+　コメントは毎回付けなければならない
+
+-diff
+➤git diff
+　最後にコミットして以降の変更点を表示
+
+-push
+➤git push (送り先のリモートリポジトリ) (ブランチ名)
+　ローカルリポジトリからリモートリポジトリにデータを送る
+
+-pull
+➤git pull (送り先のリモートリポジトリ) master
+　github上のmasterの変更点を取得
+
+-fetch
+➤git fetch (リモートリポジトリ)
+　ローカルリポジトリとリモートリポジトリを同期する
+
+-merge
+➤git merge
+  master以外のブランチの状態をmasterに統合する。
