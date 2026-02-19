@@ -1,0 +1,14 @@
+{
+  "name": "takahashi-chagyoten",
+  "version": "1.0.0",
+  "description": "高橋茶業店 公式サイト デプロイスクリプト",
+  "main": "deploy-to-wp.js",
+  "scripts": {
+    "deploy": "node deploy-to-wp.js",
+    "deploy:help": "echo '使用方法: .envを作成してnpm run deployを実行'"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "node-fetch": "^2.6.9"
+  }
+}

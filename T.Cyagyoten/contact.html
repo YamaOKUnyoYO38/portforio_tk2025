@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="高橋茶業店へのお問い合わせ" />
+  <title>お問い合わせ | 高橋茶業店</title>
+  <!-- WordPress移行時: このファイルは固定ページとしてREST APIでアップロード済み -->
+  <!-- deploy-to-wp.js を使用して自動デプロイ可能 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+</head>
+<body>
+  <header>
+    <h1>高橋茶業店</h1>
+    <div class="clearfix">
+      <nav id="top_nav">
+        <ul>
+          <li><a href="index.html" class="button">TOP</a></li>
+          <li><a href="repair.html" class="button">修理・重機・工業系依頼</a></li>
+          <li><a href="electric.html" class="button">電気工事</a></li>
+          <li><a href="shop.html" class="button">お茶販売</a></li>
+          <li><a href="profile.html" class="button">プロフィール</a></li>
+          <li><a href="contact.html" class="button">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="wrapper">
+    <h1 class="section-title">お問い合わせ</h1>
+    <p>以下のフォームよりお気軽にご連絡ください。</p>
+
+    <!-- Formspreeで取得したIDに差し替えてください。管理画面 https://formspree.io/ でフォームを作成し、YOUR_FORM_ID を実際のIDに置き換えます。 -->
+    <form id="contact_form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="max-width: 520px; margin-top: 24px;">
+      <input type="hidden" name="_to" value="datenshi777verynaze33@gmail.com" />
+
+      <label for="contact_name">お名前 <span class="required">*</span></label>
+      <input type="text" id="contact_name" name="name" required />
+
+      <label for="contact_email">メールアドレス（任意）</label>
+      <input type="email" id="contact_email" name="_replyto" />
+
+      <label for="contact_phone">電話番号 <span class="required">*</span></label>
+      <input type="tel" id="contact_phone" name="phone" required />
+
+      <label>お問い合わせ種別 <span class="required">*</span></label>
+      <div class="radio-group">
+        <label><input type="radio" name="category" value="修理・重機・工業系依頼" /> 修理・重機・工業系依頼</label><br />
+        <label><input type="radio" name="category" value="電気工事のご依頼" /> 電気工事のご依頼</label><br />
+        <label><input type="radio" name="category" value="お茶のご注文・ご購入" /> お茶のご注文・ご購入</label><br />
+        <label><input type="radio" name="category" value="その他" /> その他</label>
+      </div>
+
+      <label for="contact_message">お問い合わせ内容 <span class="required">*</span></label>
+      <textarea id="contact_message" name="message" required></textarea>
+
+      <button type="submit" class="btn-cta" style="margin-top: 16px;">送信する</button>
+    </form>
+  </div>
+
+  <footer>
+    <h1><a href="index.html">トップページへ >>></a></h1>
+    <p>© 2025 高橋茶業店</p>
+    <p>お問い合わせ: <a href="contact.html">こちら</a></p>
+    <h2>datenshi777verynaze33@gmail.com</h2>
+  </footer>
+  <script src="js/effects.js"></script>
+</body>
+</html>
