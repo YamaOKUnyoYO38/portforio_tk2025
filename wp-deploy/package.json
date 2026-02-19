@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-wp-deploy",
+  "version": "1.0.0",
+  "description": "高橋宏太朗 ポートフォリオサイト WordPress自動デプロイ",
+  "main": "deploy.js",
+  "scripts": {
+    "deploy": "node deploy.js",
+    "check": "node deploy.js --check"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "node-fetch": "^2.6.9",
+    "form-data": "^4.0.0"
+  }
+}
