@@ -1,0 +1,117 @@
+<!-- 緊急退避用html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" />
+    <meta
+      name="description"
+      content="このサイトは私、高橋宏太朗のポートフォリオサイトです。
+    これからのキャリアの起点として、随時更新していきます。"
+    />
+    <meta
+      name="keywords"
+      content="portfolio,Takahashi Kotaro ,Anime,programing,html,css"
+    />
+    <script src="/pf_tk_effects.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>ポートフォリオサイト</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/p_TK.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <!--ここからヘッダー-->
+    <header>
+      <h1>Kotaro Takahashi</h1>
+<!--======================================
+      この下のnavの部分が特に崩れてしまいます。=解決済み20250918
+==========================================-->
+      <div class="clearfix">
+        <nav id="top_nav">
+          <ul>
+            <li><a href="/portfolio_TK.html#works_title">Works</a></li>
+            <li><a href="/portfolio_TK.html#blog">Blog</a></li>
+            <li><a href="/portfolio_TK.html#skill_level">Skill Level</a></li>
+            <li><a href="/service-ai.html">AI業務効率化</a></li>
+            <li><a href="/Profile_TK.html">Profile</a></li><!--プロフィールページのURL-->
+            <li><a href="/Contact.html">Contact</a></li><!--コンタクトページのURL-->
+          
+        </nav>
+      </div>
+    </header>
+    <!--ここまでヘッダー-->
+
+    <!--ここからwrapper-->
+    <div id="wrapper">
+      
+    <!--ここからcontact-->
+    <div class="contact_wrapper">
+      <div class="clearfix">
+        <div class="contact">
+          <h1 id="c_title">Contact</h1>
+          <!-- Formspree連携： actionのYOUR_FORM_IDをFormspreeで取得したIDに置き換えてください。無料でメール受信・データ保存が可能 -->
+          <form id="contact_form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="return validateContactForm(event)">
+            <div id="c_fcont">
+              <table>
+                <tr>
+                  <h2 class="c_smallt form_row">Name</h2>
+                </tr>
+                <tr>
+                  <td><input type="text" name="name" class="one_phrase_text form_row1" placeholder="ex.Taro Yamada" required></td>
+                </tr>
+              </table>
+              <table>
+                <tr>
+                  <h2 class="c_smallt form_row">Email</h2>
+                </tr>
+                <tr>
+                  <td><input type="email" name="_replyto" class="one_phrase_text form_row1" placeholder="ex.aabb123@gmail.com" required></td>
+                </tr>
+              </table>
+              <table>
+                <tr>
+                  <td><input type="radio" name="category" value="Contact(ご意見)" class="c_type" id="cat1"><label for="cat1">Contact(ご意見)</label></td>
+                  <td><input type="radio" name="category" value="Requests(ご依頼)" class="c_type" id="cat2"><label for="cat2">Requests(ご依頼)</label></td>
+                  <td><input type="radio" name="category" value="Impressions(ご感想)" class="c_type" id="cat3"><label for="cat3">Impressions(ご感想)</label></td>
+                </tr>
+              </table>
+              <table>
+                <tr>
+                  <td><textarea name="message" id="c_textarea" placeholder="Please write here." required></textarea></td>
+                </tr>
+              </table>
+              <input type="hidden" name="_subject" value="ポートフォリオサイトからのお問い合わせ">
+              <input type="submit" value="送信する" id="btn_submit" class="hover-lift">
+            </div>
+          </form>
+        </div>
+    </div>
+    
+    </div>
+    
+    <!--ここまでcontact-->
+
+    </div>
+    <!--ここまでwrapper-->
+
+    <!--ここからfooter-->
+    <footer>
+      <h1><a href="/portfolio_TK.html">トップページへ >>></a></h1>
+      <!-- SNSロゴ：各hrefに自分のアカウントURLを貼り付けてください -->
+      <div class="footer-social">
+        <a href="https://x.com/channeldarkang1" target="_blank" rel="noopener" title="X"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23212121'%3E%3Cpath d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'/%3E%3C/svg%3E" alt="X"></a>
+        <a href="https://www.instagram.com/duanzuinoduotianshi/" target="_blank" rel="noopener" title="Instagram"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23212121'%3E%3Cpath d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z'/%3E%3C/svg%3E" alt="Instagram"></a>
+        <a href="https://www.threads.net/@duanzuinoduotianshi" target="_blank" rel="noopener" title="Threads"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23212121'%3E%3Cpath d='M12.186 24h-.007c-2.88-.024-5.091-.676-6.657-1.942-1.572-1.271-2.369-3.046-2.376-5.268V7.205h4.07v8.457c0 1.482.354 2.616 1.062 3.394.708.78 1.668 1.17 2.872 1.17 1.205 0 2.165-.39 2.873-1.17.709-.778 1.063-1.912 1.063-3.394V7.205h3.908v9.585c-.007 2.222-.804 3.997-2.376 5.268C17.274 23.324 15.064 23.976 12.186 24zM23.768 7.197v8.662c0 2.246-.545 4.043-1.629 5.366-1.089 1.329-2.565 2.008-4.445 2.046-1.825.037-3.329-.579-4.505-1.848-1.17-1.263-1.757-2.965-1.757-5.086V7.197h3.729v8.391c0 1.174.248 2.06.744 2.65.498.593 1.183.889 2.049.889.865 0 1.549-.296 2.048-.889.495-.59.744-1.476.744-2.65V7.197h3.823zM8.649 3.489V.063H4.924v3.426h3.725z'/%3E%3C/svg%3E" alt="Threads"></a>
+        <a href="https://www.facebook.com/profile.php?id=61576782177211" target="_blank" rel="noopener" title="Facebook"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23212121'%3E%3Cpath d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'/%3E%3C/svg%3E" alt="Facebook"></a>
+        <a href="https://github.com/YamaOKUnyoYO38/myPortfolios" target="_blank" rel="noopener" title="GitHub"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23212121'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E" alt="GitHub"></a>
+      </div>
+      <h2>
+        @datenshi777verynaze33@gmail.com
+      </h2>
+    </footer>
+    <!--ここまでfooter-->
+  </body>
+</html>

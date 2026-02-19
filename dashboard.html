@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>会員ページ｜AI業務効率化</title>
+    <link rel="stylesheet" href="/p_TK.css" type="text/css" media="screen" />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+  </head>
+  <body class="lp-body">
+    <header class="lp-header">
+      <h1><a href="/portfolio_TK.html">Kotaro Takahashi</a></h1>
+      <div class="clearfix">
+        <nav id="top_nav">
+          <ul>
+            <li><a href="/portfolio_TK.html">トップ</a></li>
+            <li><a href="/service-ai.html">AI業務効率化</a></li>
+            <li><a href="/Profile_TK.html">Profile</a></li>
+            <li><a href="/Contact.html">Contact</a></li>
+            <li><a href="#" id="dashboard-login-btn" class="button">ログイン</a></li>
+            <li><a href="#" id="dashboard-logout-btn" class="button" style="display:none;">ログアウト</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div id="wrapper" class="lp-wrapper dashboard-wrapper">
+      <div id="dashboard-gate" class="dashboard-gate">
+        <p>このページを表示するにはログインが必要です。</p>
+        <button type="button" id="dashboard-gate-btn" class="lp-form-btn hover-lift">ログインする</button>
+      </div>
+      <div id="dashboard-content" class="dashboard-content" style="display:none;">
+        <h1 class="lp-section-ttl">会員ページ</h1>
+        <p>ここでは、ご依頼の進捗確認や実績の更新ができます。</p>
+        <section class="dashboard-section">
+          <h2>ご依頼状況</h2>
+          <p class="dashboard-placeholder">（Netlify Identity 連携後、ここに依頼一覧やステータスを表示できます）</p>
+        </section>
+        <section class="dashboard-section">
+          <h2>実績・更新履歴</h2>
+          <p class="dashboard-placeholder">（管理者が実績を更新する場合は、Netlify CMS や API 連携で拡張できます）</p>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      <h1><a href="/portfolio_TK.html">トップページへ >>></a></h1>
+      <h2>@datenshi777verynaze33@gmail.com</h2>
+    </footer>
+
+    <script>
+      (function() {
+        var gate = document.getElementById('dashboard-gate');
+        var content = document.getElementById('dashboard-content');
+        var loginBtn = document.getElementById('dashboard-login-btn');
+        var logoutBtn = document.getElementById('dashboard-logout-btn');
+        var gateBtn = document.getElementById('dashboard-gate-btn');
+
+        function updateUI(user) {
+          if (user) {
+            if (gate) gate.style.display = 'none';
+            if (content) content.style.display = 'block';
+            if (loginBtn) loginBtn.style.display = 'none';
+            if (logoutBtn) logoutBtn.style.display = 'inline-block';
+          } else {
+            if (gate) gate.style.display = 'block';
+            if (content) content.style.display = 'none';
+            if (loginBtn) loginBtn.style.display = 'inline-block';
+            if (logoutBtn) logoutBtn.style.display = 'none';
+          }
+        }
+
+        function init() {
+          if (!window.netlifyIdentity) return setTimeout(init, 100);
+          var user = netlifyIdentity.currentUser();
+          updateUI(user);
+          netlifyIdentity.on('login', function(u) { updateUI(u); });
+          netlifyIdentity.on('logout', function() { updateUI(null); });
+        }
+
+        if (gateBtn) gateBtn.addEventListener('click', function() { if (window.netlifyIdentity) netlifyIdentity.open(); });
+        if (loginBtn) loginBtn.addEventListener('click', function(e) { e.preventDefault(); if (window.netlifyIdentity) netlifyIdentity.open(); });
+        if (logoutBtn) logoutBtn.addEventListener('click', function(e) { e.preventDefault(); if (window.netlifyIdentity) netlifyIdentity.logout(); });
+
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+        else init();
+      })();
+    </script>
+  </body>
+</html>
